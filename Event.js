@@ -21,11 +21,27 @@ btn.addEventListener("mouseover",()=>{
   document.body.style.background="tomato"
 })*/
 
-let inp = document.querySelector("#inp");
+/*let inp = document.querySelector("#inp");
 inp.addEventListener("keydown",()=>{
-    console.log("key oressed down");
+    console.log("key pressed down");
 })
 
 inp.addEventListener("keyup",()=>{
     console.log("key pressed up");
+})*/
+
+/*function changeBackground(color) {
+    document.body.style.backgroundColor = color;
+}*/
+
+let bgColor = document.querySelectorAll(".bgColor");
+[...bgColor].map((element)=>{
+    element.addEventListener("mouseover",()=>{
+        element.style.backgroundColor = element.innerText;
+    });
+
+    element.addEventListener("mouseleave", ()=> {
+        element.style.backgroundColor="transparent";
+    })
 })
+
