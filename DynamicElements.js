@@ -23,39 +23,61 @@
 // </form> */}
 
 //! dynamic elements
-let mainEle = document.createElement("div");
-mainEle.setAttribute("class","mainBlok");
-//mainEle.innerText="Main"
-console.log(mainEle);
+// let mainEle = document.createElement("div");
+// mainEle.setAttribute("class","mainBlok");
+// //mainEle.innerText="Main"
+// console.log(mainEle);
 
-let topEle = document.createElement("div");
-//mainEle.innerText="Top"
-topEle.setAttribute("class","topBlok");
-console.log(topEle);
+// let topEle = document.createElement("div");
+// //mainEle.innerText="Top"
+// topEle.setAttribute("class","topBlok");
+// console.log(topEle);
 
-let image = document.createElement("img");
-image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABbXr4i-QODqhy7tofHYmTYh05rYPktzacw&s";
-image.width = 300;
-image.height = 300;
+// let image = document.createElement("img");
+// image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTABbXr4i-QODqhy7tofHYmTYh05rYPktzacw&s";
+// image.width = 300;
+// image.height = 300;
 
-let bottomEle = document.createElement("div");
-//mainEle.innerText="Bottom"
-bottomEle.setAttribute("class","bottomBlok");
-//console.log(bottomEle);
-let h1 = document.createElement("h1");
-h1.innerText = "Heading";
+// let bottomEle = document.createElement("div");
+// //mainEle.innerText="Bottom"
+// bottomEle.setAttribute("class","bottomBlok");
+// //console.log(bottomEle);
+// let h1 = document.createElement("h1");
+// h1.innerText = "Heading";
 
-let btn = document.createElement("button");
-btn.innerText ="view more";
+// let btn = document.createElement("button");
+// btn.innerText ="view more";
 
-{/* <div class="mainBlok">
-    <div class="topBlok"></div> 
-    <div class="bottomBlok"></div>
-</div> */}
+// {/* <div class="mainBlok">
+//     <div class="topBlok"></div> 
+//     <div class="bottomBlok"></div>
+// </div> */}
 
-bottomEle.appendChild(h1);
-bottomEle.appendChild(btn);
-mainEle.appendChild(image);
-mainEle.appendChild(topEle);
-mainEle.appendChild(bottomEle);
-document.body.appendChild(mainEle);
+// bottomEle.appendChild(h1);
+// bottomEle.appendChild(btn);
+// mainEle.appendChild(image);
+// mainEle.appendChild(topEle);
+// mainEle.appendChild(bottomEle);
+// document.body.appendChild(mainEle);
+
+let form = document.querySelector("form");
+let username = document.getElementById("uname");
+let password = document.getElementById("upass");
+let gender = document.querySelectorAll("input[name='gender']");
+
+form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    let un = username.value;
+    let up = password.value;
+    let ele = "";
+    //console.log(un);
+    for (let i = 0; i < gender.length; i++) {
+        if (gender[i].checked == true) {
+            ele += gen[i].value;
+        }
+    }
+let userDetails={
+    un, up, ele
+};
+console.log(userDetails);
+})
